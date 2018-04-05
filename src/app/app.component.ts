@@ -35,7 +35,7 @@ export class MyApp {
     this.menuCtrl.close();
   }
   onLogout(){
-    console('Logged out.!');
+    console.log('Logged out.!');
  }
 
 }
