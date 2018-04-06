@@ -11,28 +11,44 @@
       <button
         ion-item
         icon-left
-        (click)= "onLoad(tabsPage)">
+        (click)= "onLoad(tabsPage)"
+        *ngIf="isAuthenticated">
         <ion-icon name="book"></ion-icon>
         ScoreBoard
       </button>
+
       <button
         ion-item
         icon-left
-        (click)= "onLoad(tabsPage)">
+        (click)= "onLoad(playersPage)"
+        *ngIf="isAuthenticated">
+        <ion-icon name="people"></ion-icon>
+        Playes
+      </button>
+
+      <button
+        ion-item
+        icon-left
+        (click)= "onLoad(loginPage)"
+        *ngIf="!isAuthenticated">
         <ion-icon name="log-in"></ion-icon>
         Login
       </button>
+
       <button
         ion-item
         icon-left
-        (click)= "onLoad(tabsPage)">
+        (click)= "onLoad(signupPage)"
+        *ngIf="!isAuthenticated">
+        
         <ion-icon name="person"></ion-icon>
         Signup
       </button>
       <button
         ion-item
         icon-left
-        (click)= "onLogout()">
+        (click)= "onLogout()"
+        *ngIf="isAuthenticated">
         <ion-icon name="log-out"></ion-icon>
         Logout
       </button>

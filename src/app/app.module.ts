@@ -1,3 +1,4 @@
+import { PlayersPage } from './../pages/players/players';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -17,6 +18,8 @@ import { LoginPage } from '../pages/sidemenu/login/login';
 import { SignupPage } from '../pages/sidemenu/signup/signup';
 import { LogoutPage } from '../pages/sidemenu/logout/logout';
 
+import { AuthService } from '../services/auth';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -26,6 +29,7 @@ import { LogoutPage } from '../pages/sidemenu/logout/logout';
     BattingPage,
     BowlingPage,
     TeamsPage,
+    PlayersPage,
     LoginPage,
     SignupPage,
     LogoutPage
@@ -44,6 +48,7 @@ import { LogoutPage } from '../pages/sidemenu/logout/logout';
     BattingPage,
     BowlingPage,
     TeamsPage,
+    PlayersPage,
     LoginPage,
     SignupPage,
     LogoutPage
@@ -51,7 +56,8 @@ import { LogoutPage } from '../pages/sidemenu/logout/logout';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService
   ]
 })
 export class AppModule {}
