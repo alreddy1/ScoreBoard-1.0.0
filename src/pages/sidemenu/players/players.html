@@ -1,0 +1,40 @@
+<!--
+  Generated template for the PlayersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"> </ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Players</ion-title>
+
+    <ion-buttons end>
+        <button ion-button icon-only (click)="onGoToAddPlayer()">
+          <ion-icon name="person-add"> </ion-icon>
+        </button>
+      </ion-buttons>
+
+  </ion-navbar>
+
+  <!-- <button ion-button (click)="onGoToAddPlayer()"> Add Player </button> -->
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item *ngFor="let player of listOfPlayers" >
+      <h3>{{player.firstName}}</h3>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

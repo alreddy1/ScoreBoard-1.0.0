@@ -1,0 +1,98 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Player Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <form #f="ngForm" (ngSubmit)="onAddPlayer(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>First Name</ion-label>
+        <ion-input
+        type="text"
+        name="firstName"
+        placeholder="Linga"
+        ngModel
+        required> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input
+        type="text"
+        name="lastName"
+        placeholder="Annela"
+        ngModel
+        required> </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Role</ion-label>
+        <ion-input
+        type="text"
+        name="role"
+        ngModel
+        > </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Motto</ion-label>
+        <ion-input
+        type="text"
+        name="motto"
+        placeholder="Play Bold!"
+        ngModel
+        > </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>DOB</ion-label>
+        <ion-datetime
+        displayFormat="MMM DD, YYYY"
+        
+        > </ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input
+        type="email"
+        name="email"
+        placeholder="abc@scoreboard.in"
+        ngModel
+        > </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Phono No</ion-label>
+        <ion-input
+        type="number"
+        name="phoneNo"
+        placeholder="987-654-4321"
+        ngModel
+        > </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <button
+      ion-button 
+      type="submit"
+      block
+      [disabled]="!f.value"> Submit</button>
+
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let player of listOfPlayers" >
+      <h3>{{player.firstName}}</h3>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

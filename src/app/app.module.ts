@@ -1,4 +1,7 @@
-import { PlayersPage } from './../pages/players/players';
+import { PlayerService } from './../services/player.service';
+import { PlayerInfoPage } from './../pages/sidemenu/players/player-info/player-info';
+import { TeamsPage } from './../pages/sidemenu/teams/teams';
+import { PlayersPage } from '../pages/sidemenu/players/players';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,7 +15,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { BattingPage} from '../pages/batting/batting';
 import { BowlingPage } from '../pages/bowling/bowling';
-import { TeamsPage} from '../pages/teams/teams';
 
 import { LoginPage } from '../pages/sidemenu/login/login';
 import { SignupPage } from '../pages/sidemenu/signup/signup';
@@ -28,11 +30,12 @@ import { AuthService } from '../services/auth';
     TabsPage,
     BattingPage,
     BowlingPage,
-    TeamsPage,
     PlayersPage,
+    PlayerInfoPage,
     LoginPage,
     SignupPage,
-    LogoutPage
+    LogoutPage,
+    TeamsPage
 
   ],
   imports: [
@@ -47,17 +50,19 @@ import { AuthService } from '../services/auth';
     TabsPage,
     BattingPage,
     BowlingPage,
-    TeamsPage,
     PlayersPage,
+    PlayerInfoPage,
     LoginPage,
     SignupPage,
-    LogoutPage
+    LogoutPage,
+    TeamsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthService
+    AuthService,
+    PlayerService
   ]
 })
 export class AppModule {}
